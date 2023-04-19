@@ -103,6 +103,6 @@ public class LottieAnimationManager {
             else{
                 completion(false)
             }
-        }, animationCache: DefaultAnimationCache.sharedCache)
+        }, animationCache: LRUAnimationCache.sharedCache)
     }
 }
