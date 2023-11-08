@@ -68,9 +68,9 @@ public class LottieAnimationManager {
     }
     
     
-    public class func showAnimationFromUrl(FromUrl url: String, animationBackgroundView: UIView, removeFromSuper: Bool = true, loopMode: LottieLoopMode = .playOnce, contentMode: UIView.ContentMode = .scaleAspectFit, shouldAnimate: Bool = true, animationPrepared:LottieAnimation.DownloadClosure?=nil, completion: @escaping (Bool) -> ()) {
+    public class func showAnimationFromUrl(FromUrl url: URL, animationBackgroundView: UIView, removeFromSuper: Bool = true, loopMode: LottieLoopMode = .playOnce, contentMode: UIView.ContentMode = .scaleAspectFit, shouldAnimate: Bool = true, animationPrepared:LottieAnimation.DownloadClosure?=nil, completion: @escaping (Bool) -> ()) {
         
-        LottieAnimation.loadedFrom(url: URL(string: url)!, closure: { (animation) in
+        LottieAnimation.loadedFrom(url: url, closure: { (animation) in
             animationPrepared?(animation)
             if (animation != nil){
                 let animationView = LottieAnimationView()
